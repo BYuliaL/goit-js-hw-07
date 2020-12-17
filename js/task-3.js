@@ -18,12 +18,24 @@ const images = [
 ];
 
 const ulImages = document.querySelector("#gallery");
-const getListImages = images.map(({ ...images }) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.alt = images.alt;
-  img.src = images.url;
-  li.append(img);
-  return li;
+
+// 1 спосіб
+// const getListImages = images.map(({ ...images }) => {
+//   const li = document.createElement("li");
+//   const img = document.createElement("img");
+//   img.alt = images.alt;
+//   img.src = images.url;
+//   li.append(img);
+//   return li;
+// });
+// ulImages.append(...getListImages);
+
+// 2 спосіб
+const getListImages = images.forEach(({ ...images }) => {
+  ulImages.insertAdjacentHTML(
+    "afterbegin",
+    `<li><img alt=${images.alt} src=${images.url}></li > `
+  );
 });
-ulImages.append(...getListImages);
+
+console.log(ulImages);

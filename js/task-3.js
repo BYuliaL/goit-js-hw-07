@@ -34,7 +34,7 @@ const ulImages = document.querySelector("#gallery");
 const getListImages = images.forEach(({ ...images }) => {
   ulImages.insertAdjacentHTML(
     "afterbegin",
-    `<li><img alt=${images.alt} src=${images.url}></li > `
+    ` <li><img alt='${images.alt}' src="${images.url}"></li > `
   );
 });
 

@@ -2,7 +2,7 @@
 const inputValue = document.querySelector("#name-input");
 const outputValue = document.querySelector("#name-output");
 
-inputValue.addEventListener("change", getInputValue);
+inputValue.addEventListener("input", getInputValue);
 
 function getInputValue(event) {
   event.target.value === ""

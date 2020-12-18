@@ -32,4 +32,3 @@ function getIncrement() {
   counterValue.textContent = counter.startValue;
   console.log(counter);
 }
-//  2 варіант

@@ -31,11 +31,10 @@ const ulImages = document.querySelector("#gallery");
 // ulImages.append(...getListImages);
 
 // 2 спосіб
-const getListImages = images.forEach(({ ...images }) => {
-  ulImages.insertAdjacentHTML(
-    "afterbegin",
-    ` <li><img alt='${images.alt}' src="${images.url}"></li > `
-  );
-});
 
+const getListImages = images.map(({ ...images }) => {
+  return ` <li><img alt='${images.alt}' src="${images.url}"></li > `;
+});
+console.log(getListImages);
+ulImages.insertAdjacentHTML("afterbegin", getListImages.join(""));
 console.log(ulImages);
